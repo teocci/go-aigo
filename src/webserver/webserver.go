@@ -23,11 +23,3 @@ func Start(cfg *config.ServerSetup) {
 	log.Printf("Listening on :%d", port)
 	log.Fatal(app.Listen(fmt.Sprintf(":%d", port)))
 }
-
-func registerRoutes(app *fiber.App) {
-	app.Get("/", func(c *fiber.Ctx) error {
-		return c.JSON(fiber.Map{
-			"message": "Welcome to the modular Fiber app!",
-		})
-	})
-}
