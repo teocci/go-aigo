@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>{{.Title}}</title>
+    <link rel="stylesheet" href="/css/style.css">
+
+    {{ template "styles" . }}
+    <script type="module" src="/js/main.js" defer></script>
+    <script src="/js/constant.js" defer></script>
+    <script src="/js/common.js" defer></script>
+    {{ template "scripts" . }}
+    {{ template "modules" . }}
+</head>
+<body>
+<main class="container">
+    <h1>What do you want to search?</h1>
+
+    <div class="w-full max-w-[90%] !font-sans sm:max-w-2xl space-y-6 p-0 mx-auto transition-all duration-300">
+        <div class="!mt-4" style="opacity: 1; transform: none;">
+            <div class="relative w-full flex flex-col gap-2 rounded-lg transition-all duration-300 !font-sans bg-transparent">
+                <input class="hidden" multiple="" accept="image/*" tabindex="-1" type="file">
+                <input class="hidden" multiple="" accept="image/*" tabindex="-1" type="file">
+                <div class="relative rounded-lg bg-neutral-100 dark:bg-neutral-900">
+                        <textarea
+                                class="flex py-2 shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 min-h-[56px] max-h-[400px] w-full resize-none rounded-lg overflow-x-hidden text-base leading-relaxed bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 focus:border-neutral-300 dark:focus:border-neutral-600 text-neutral-900 dark:text-neutral-100 focus:!ring-1 focus:!ring-neutral-300 dark:focus:!ring-neutral-600 px-4 pt-3 pb-5"
+                                dir="ltr" placeholder="Ask a question..." rows="3"></textarea>
+                    <div class="absolute bottom-0 inset-x-0 flex justify-between items-center rounded-b-lg p-2 bg-neutral-100 dark:bg-neutral-900 !border !border-t-0 !border-neutral-200 dark:!border-neutral-700">
+                        <div class="flex items-center gap-2">
+                            <div class="inline-flex items-center min-w-[38px] p-0.5 rounded-full border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-sm overflow-visible relative z-10"
+                                 style="display: flex; align-items: center; justify-content: flex-start; width: 30px; gap: 0px; padding-right: 0px;">
+                                <div style="margin: 0px; will-change: transform; transform: none; width: 28px; opacity: 1;">
+                                    <button class="relative flex items-center justify-center size-8 rounded-full transition-colors duration-300 bg-neutral-500 dark:bg-neutral-600 text-white dark:text-neutral-300"
+                                            data-state="closed" tabindex="0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round"
+                                             class="lucide lucide-globe size-4">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                                            <path d="M2 12h20"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div style="margin: 0px; will-change: transform; transform: translateX(-10px); opacity: 0; width: 0px;">
+                                    <button class="relative flex items-center justify-center size-8 rounded-full transition-colors duration-300 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800/80"
+                                            data-state="closed" tabindex="0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                             fill="currentColor" viewBox="0 0 256 256" class="size-4">
+                                            <path d="M214.75,211.71l-62.6-98.38,61.77-67.95a8,8,0,0,0-11.84-10.76L143.24,99.34,102.75,35.71A8,8,0,0,0,96,32H48a8,8,0,0,0-6.75,12.3l62.6,98.37-61.77,68a8,8,0,1,0,11.84,10.76l58.84-64.72,40.49,63.63A8,8,0,0,0,160,224h48a8,8,0,0,0,6.75-12.29ZM164.39,208,62.57,48h29L193.43,208Z"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div style="margin: 0px; will-change: transform; transform: translateX(-10px); opacity: 0; width: 0px;">
+                                    <button class="relative flex items-center justify-center size-8 rounded-full transition-colors duration-300 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800/80"
+                                            data-state="closed" tabindex="0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                             fill="currentColor" viewBox="0 0 256 256" class="size-4">
+                                            <path d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div style="margin: 0px; will-change: transform; transform: translateX(-10px); opacity: 0; width: 0px;">
+                                    <button class="relative flex items-center justify-center size-8 rounded-full transition-colors duration-300 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800/80"
+                                            data-state="closed" tabindex="0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round"
+                                             class="lucide lucide-pen size-4">
+                                            <path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div style="margin: 0px; will-change: transform; transform: translateX(-10px); opacity: 0; width: 0px;">
+                                    <button class="relative flex items-center justify-center size-8 rounded-full transition-colors duration-300 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800/80"
+                                            data-state="closed" tabindex="0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round"
+                                             class="lucide lucide-book size-4">
+                                            <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div style="margin: 0px; will-change: transform; transform: translateX(-10px); opacity: 0; width: 0px;">
+                                    <button class="relative flex items-center justify-center size-8 rounded-full transition-colors duration-300 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800/80"
+                                            data-state="closed" tabindex="0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round"
+                                             class="lucide lucide-youtube size-4">
+                                            <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path>
+                                            <path d="m10 15 5-3-5-3z"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <button type="button" id="radix-:rc:" aria-haspopup="menu" aria-expanded="false"
+                                    data-state="closed"
+                                    class="flex items-center justify-center w-8 h-8 rounded-full transition-colors duration-200 !bg-opacity-90 dark:!bg-opacity-90 !bg-[#2D2D2D] dark:!bg-[#333333] !text-white hover:!text-white hover:!bg-[#1a1a1a] dark:hover:!bg-[#444444] focus:outline-none focus:ring-2 focus:ring-opacity-50 !focus:ring-glossyblack-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="lucide lucide-zap w-4 h-4">
+                                    <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 rounded-full p-1.5 h-8 w-8"
+                                    disabled="">
+                                <svg height="14" stroke-linejoin="round" viewBox="0 0 16 16" width="14"
+                                     style="color: currentcolor;">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M8.70711 1.39644C8.31659 1.00592 7.68342 1.00592 7.2929 1.39644L2.21968 6.46966L1.68935 6.99999L2.75001 8.06065L3.28034 7.53032L7.25001 3.56065V14.25V15H8.75001V14.25V3.56065L12.7197 7.53032L13.25 8.06065L14.3107 6.99999L13.7803 6.46966L8.70711 1.39644Z"
+                                          fill="currentColor">
+
+                                    </path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="flex flex-row justify-between items-center bottom-3 w-full fixed p-4 sm:p-auto">
+    <div class="text-sm text-neutral-500 dark:text-neutral-400">© 2025 All rights reserved.</div>
+    <div class="flex items-center gap-4">
+        <a target="_blank" rel="noopener noreferrer"
+           class="text-sm hover:text-neutral-800 dark:hover:text-neutral-200 transition-colors text-neutral-600 dark:text-neutral-400"
+           data-state="closed" href="https://x.com/teocci">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                 viewBox="0 0 256 256" class="size-5">
+                <path d="M214.75,211.71l-62.6-98.38,61.77-67.95a8,8,0,0,0-11.84-10.76L143.24,99.34,102.75,35.71A8,8,0,0,0,96,32H48a8,8,0,0,0-6.75,12.3l62.6,98.37-61.77,68a8,8,0,1,0,11.84,10.76l58.84-64.72,40.49,63.63A8,8,0,0,0,160,224h48a8,8,0,0,0,6.75-12.29ZM164.39,208,62.57,48h29L193.43,208Z"></path>
+            </svg>
+        </a></div>
+</footer>
+</body>
+</html>
