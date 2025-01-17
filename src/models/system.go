@@ -4,6 +4,7 @@
 package models
 
 import (
+	"encoding/json"
 	"fmt"
 	"time"
 )
@@ -106,4 +107,24 @@ You are a code runner, stock analysis and currency conversion expert.
 - No need to ask for a follow-up question, just provide the analysis.
 - You can write in latex but currency should be in words or acronym like 'USD'.
 - Do not give up!`,
+}
+
+// GetModePromptJSON generates a JSON object with the "role" as "system" and "content" as the value of the specified key in GroupPrompts.
+func GetModePromptJSON(key string) (string, error) {
+	content, exists := ModePrompts[key]
+	if !exists {
+		return "", fmt.Errorf("prompt for key '%s' not found", key)
+	}
+
+	response := map[string]string{
+		"role":    "system",
+		"content": content,
+	}
+
+	jsonBytes, err := json.Marshal(response)
+	if err != nil {
+		return "", fmt.Errorf("error marshaling JSON: %v", err)
+	}
+
+	return string(jsonBytes), nil
 }

@@ -16,15 +16,6 @@ import (
 	"github.com/teocci/aigo/src/env"
 )
 
-type CompletionRequest struct {
-	Messages []struct {
-		Role    string `json:"role"`
-		Content string `json:"content"`
-	} `json:"messages"`
-	Model string `json:"model"`
-	Mode  string `json:"mode"`
-}
-
 func GetOpenAICompletion(req CompletionRequest) (interface{}, error) {
 	err := env.Load(".env")
 	if err != nil {
@@ -35,7 +26,7 @@ func GetOpenAICompletion(req CompletionRequest) (interface{}, error) {
 
 	fmt.Printf("key: %v", openaiKey)
 	fmt.Printf("req: %v", req)
-	
+
 	// Initialize OpenAI client
 	client := openai.NewClient(openaiKey)
 

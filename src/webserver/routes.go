@@ -25,8 +25,6 @@ func handleCompletion(c *fiber.Ctx) error {
 		})
 	}
 
-	append(requestBody.Messages, models.ModePrompts[])
-
 	// Log the incoming request
 	log.Printf("Received request: %+v", requestBody)
 
