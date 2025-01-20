@@ -9,12 +9,12 @@ import (
 	"github.com/sashabaranov/go-openai"
 )
 
+type CompletionMessages []openai.ChatCompletionMessage
+
 type CompletionRequest struct {
-	Messages []struct {
-		Messages []openai.ChatCompletionMessage `json:"messages"`
-	}
-	Model string `json:"model"`
-	Mode  string `json:"mode"`
+	Messages CompletionMessages `json:"messages"`
+	Model    string             `json:"model"`
+	Mode     string             `json:"mode"`
 }
 
 // AddSystemPrompt enriches the request with the system prompt
