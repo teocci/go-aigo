@@ -31,8 +31,7 @@ func GetXAICompletion(req CompletionRequest) (interface{}, error) {
 
 	xaiAPIKey := os.Getenv("XAI_API_KEY")
 
-	fmt.Printf("key: %v", xaiAPIKey)
-	fmt.Printf("req: %v", req)
+	fmt.Printf("req: %v \n", req)
 
 	config = openai.DefaultConfig(xaiAPIKey)
 	config.BaseURL = xaiBaseURL
